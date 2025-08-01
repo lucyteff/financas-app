@@ -1,0 +1,63 @@
+.meta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: var(--texto-escuro);
+}
+
+.form-group input {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-group.has-error input {
+  border-color: #ff6b6b;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+}
+
+.submit-button {
+  background-color: var(--verde-terciario);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.submit-button:not(:disabled):hover {
+  background-color: #556b2f;
+}
+
+@media (max-width: 480px) {
+  .form-group input {
+    padding: 15px;
+  }
+  
+  .submit-button {
+    padding: 15px;
+  }
+}

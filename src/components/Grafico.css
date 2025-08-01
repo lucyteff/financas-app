@@ -1,0 +1,66 @@
+/* src/components/Grafico.css */
+.grafico-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.grafico-detalhes {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 15px;
+  position: relative;
+  box-shadow: var(--sombra);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.grafico-detalhes h3 {
+  color: var(--verde-terciario);
+  margin-bottom: 10px;
+}
+
+.grafico-detalhes ul {
+  list-style-type: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.grafico-detalhes li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.grafico-detalhes li:last-child {
+  border-bottom: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--texto-escuro);
+}
+
+@media (min-width: 768px) {
+  .grafico-wrapper {
+    flex-direction: row;
+  }
+  
+  .chart-container {
+    flex: 2;
+  }
+  
+  .grafico-detalhes {
+    flex: 1;
+  }
+}

@@ -1,0 +1,65 @@
+.moedas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.moeda-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+.moeda-simbolo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--verde-terciario);
+}
+
+.moeda-valor {
+  font-size: 1.1rem;
+}
+
+.moedas-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.refresh-button {
+  background: none;
+  border: none;
+  color: var(--verde-terciario);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.refresh-button:hover {
+  text-decoration: underline;
+}
+
+/* Efeito de pull-to-refresh */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.refreshing .refresh-button {
+  animation: spin 1s linear infinite;
+}
+
+@media (max-width: 480px) {
+  .moedas-grid {
+    grid-template-columns: 1fr;
+  }
+}

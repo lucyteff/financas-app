@@ -1,0 +1,36 @@
+.card {
+  background-color: var(--verde-primario);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex: 1;
+  min-width: 280px;
+}
+
+.card h2 {
+  color: var(--verde-terciario);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 8px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Efeitos para interação */
+.card:active {
+  transform: scale(0.98);
+}
+
+@media (min-width: 768px) {
+  .card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+}

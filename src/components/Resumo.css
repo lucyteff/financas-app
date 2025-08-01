@@ -1,0 +1,43 @@
+.resumo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.resumo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.resumo-item h3 {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: var(--texto-escuro);
+}
+
+.resumo-item p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.resumo-item.gastos {
+  background-color: rgba(255, 99, 132, 0.1);
+}
+
+.resumo-item.poupancas {
+  background-color: rgba(75, 192, 192, 0.1);
+}
+
+.resumo-item.metas {
+  background-color: rgba(54, 162, 235, 0.1);
+}
+
+@media (max-width: 480px) {
+  .resumo-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,158 @@
+:root {
+  --verde-primario: #a8e6cf;
+  --verde-secundario: #dcedc1;
+  --verde-terciario: #6b8e23;
+  --texto-escuro: #333;
+  --texto-claro: #fff;
+  --sombra: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: var(--texto-escuro);
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background-color: var(--verde-terciario);
+  color: var(--texto-claro);
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.app-container {
+  flex: 1;
+  padding: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* mobile */
+.mobile-nav {
+  display: flex;
+  background-color: var(--verde-secundario);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--texto-escuro);
+  transition: all 0.2s;
+}
+
+.nav-button.active {
+  background-color: var(--verde-primario);
+  font-weight: bold;
+  color: var(--verde-terciario);
+}
+
+/* Views responsivas */
+.desktop-view {
+  display: none;
+}
+
+.mobile-view {
+  display: block;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: var(--verde-terciario);
+}
+
+/* Media Queries para desktop */
+@media (min-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .mobile-nav {
+    display: none;
+  }
+  
+  .desktop-view {
+    display: block;
+  }
+  
+  .mobile-view {
+    display: none;
+  }
+  
+  .row {
+    gap: 20px;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Melhorias para dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --texto-escuro: #f0f0f0;
+    --texto-claro: #121212;
+  }
+  
+  body {
+    background-color: #121212;
+  }
+  
+  .card {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+} 

@@ -1,0 +1,145 @@
+/* src/components/ConversorMoedas.css */
+.conversor-container {
+  background-color: var(--verde-primario);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.conversor-container h2 {
+  color: var(--verde-terciario);
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 8px;
+}
+
+.conversor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: var(--texto-escuro);
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--card-background);
+  color: var(--texto-escuro);
+}
+
+.form-group.has-error input {
+  border-color: #ff6b6b;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+}
+
+.converter-button {
+  background-color: var(--verde-terciario);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.converter-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.converter-button:not(:disabled):hover {
+  background-color: #556b2f;
+}
+
+.resultado-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+.resultado-container h3 {
+  color: var(--verde-terciario);
+  margin-bottom: 10px;
+}
+
+.warning-message {
+  color: #e67e22;
+  background-color: #fff4e6;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: var(--verde-terciario);
+}
+
+/* Modo Escuro */
+@media (prefers-color-scheme: dark) {
+  .conversor-container {
+    background-color: #1e1e1e;
+  }
+  
+  .form-group input,
+  .form-group select {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #f0f0f0;
+  }
+  
+  .resultado-container {
+    background-color: #2d2d2d;
+  }
+  
+  .warning-message {
+    background-color: #332a1a;
+    color: #ffb74d;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .form-group input,
+  .form-group select {
+    padding: 15px;
+  }
+  
+  .converter-button {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .conversor-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: flex-end;
+  }
+  
+  .converter-button {
+    height: fit-content;
+  }
+}
